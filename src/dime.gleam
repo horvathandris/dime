@@ -326,10 +326,14 @@ pub const zwg = Currency("ZWG", "924", "Zimbabwean Gold", "ZiG")
 
 pub opaque type Currency {
   Currency(
-    alpha_code: String,
-    numeric_code: String,
-    display_name: String,
-    symbol: String,
+    // alpha code
+    String,
+    // numeric code
+    String,
+    // display name
+    String,
+    // symbol
+    String,
   )
 }
 
@@ -349,11 +353,13 @@ pub fn numeric_code(currency: Currency) -> String {
 }
 
 pub fn display_name(currency: Currency) -> String {
-  currency.display_name
+  let Currency(_, _, display_name, ..) = currency
+  display_name
 }
 
 pub fn symbol(currency: Currency) -> String {
-  currency.symbol
+  let Currency(_, _, _, symbol, ..) = currency
+  symbol
 }
 
 pub fn from_alpha_code(
