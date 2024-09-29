@@ -9,11 +9,20 @@ A currency library based on the [ISO-4217 standard](https://en.wikipedia.org/wik
 gleam add dime@1
 ```
 
+## Usage
+
 ```gleam
 import dime
 
 pub fn main() {
+  // parse alpha-3 code
   let gbp = dime.from_alpha_code("Gbp")
+
+  // parse numeric code
+  let huf = dime.from_numeric_code("348")
+
+  // use exported constants
+  let pln = dime.pln
 
   gbp
   |> dime.display_name // "Pound Sterling"
@@ -21,8 +30,11 @@ pub fn main() {
   gbp
   |> dime.symbol // "£"
 
-  gbp
-  |> dime.numeric_code // "826"
+  huf
+  |> dime.alpha_code // "HUF"
+
+  pln
+  |> dime.numeric_code // "985"
 }
 ```
 
@@ -32,7 +44,7 @@ Further documentation can be found at <https://hexdocs.pm/dime>.
 
 ### Updating the ISO-4217 dataset
 
-To update the [dataset](test/data/currencies.json) that is used to [test the ISO-4217 compliance](test/iso_4217_test.gleam) of the library,
+To update the [dataset](test/data/currencies.json) that is used to [test the ISO-4217 compliance](test/iso_4217_test.gleam#L32) of the library,
 first run the script below.
 
 ```sh
