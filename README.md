@@ -31,6 +31,9 @@ pub fn main() {
   |> dime.symbol // "£"
 
   huf
+  |> dime.minor_units // 2
+
+  huf
   |> dime.alpha_code // "HUF"
 
   pln

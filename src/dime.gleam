@@ -1,328 +1,341 @@
 import gleam/result
 import gleam/string
 
-pub const aed = Currency("AED", "784", "United Arab Emirates Dirham", "د.إ")
+pub const aed = Currency(
+  "AED",
+  "784",
+  "United Arab Emirates Dirham",
+  "د.إ",
+  2,
+)
 
-pub const afn = Currency("AFN", "971", "Afghan Afghani", "؋")
+pub const afn = Currency("AFN", "971", "Afghan Afghani", "؋", 2)
 
-pub const all = Currency("ALL", "008", "Albanian Lek", "L")
+pub const all = Currency("ALL", "008", "Albanian Lek", "L", 2)
 
-pub const amd = Currency("AMD", "051", "Armenian Dram", "֏")
+pub const amd = Currency("AMD", "051", "Armenian Dram", "֏", 2)
 
-pub const ang = Currency("ANG", "532", "Netherlands Antillean Guilder", "ƒ")
+pub const ang = Currency("ANG", "532", "Netherlands Antillean Guilder", "ƒ", 2)
 
-pub const aoa = Currency("AOA", "973", "Angolan Kwanza", "Kz")
+pub const aoa = Currency("AOA", "973", "Angolan Kwanza", "Kz", 2)
 
-pub const ars = Currency("ARS", "032", "Argentine Peso", "$")
+pub const ars = Currency("ARS", "032", "Argentine Peso", "$", 2)
 
-pub const aud = Currency("AUD", "036", "Australian Dollar", "$")
+pub const aud = Currency("AUD", "036", "Australian Dollar", "$", 2)
 
-pub const awg = Currency("AWG", "533", "Aruban Florin", "ƒ")
+pub const awg = Currency("AWG", "533", "Aruban Florin", "ƒ", 2)
 
-pub const azn = Currency("AZN", "944", "Azerbaijani Manat", "₼")
+pub const azn = Currency("AZN", "944", "Azerbaijani Manat", "₼", 2)
 
 pub const bam = Currency(
   "BAM",
   "977",
   "Bosnia and Herzegovina Convertible Mark",
   "KM",
+  2,
 )
 
-pub const bbd = Currency("BBD", "052", "Barbadian Dollar", "$")
+pub const bbd = Currency("BBD", "052", "Barbadian Dollar", "$", 2)
 
-pub const bdt = Currency("BDT", "050", "Bangladeshi Taka", "৳")
+pub const bdt = Currency("BDT", "050", "Bangladeshi Taka", "৳", 2)
 
-pub const bgn = Currency("BGN", "975", "Bulgarian Lev", "лв")
+pub const bgn = Currency("BGN", "975", "Bulgarian Lev", "лв", 2)
 
-pub const bhd = Currency("BHD", "048", "Bahraini Dinar", ".د.ب")
+pub const bhd = Currency("BHD", "048", "Bahraini Dinar", ".د.ب", 3)
 
-pub const bif = Currency("BIF", "108", "Burundian Franc", "FBu")
+pub const bif = Currency("BIF", "108", "Burundian Franc", "FBu", 0)
 
-pub const bmd = Currency("BMD", "060", "Bermudian Dollar", "$")
+pub const bmd = Currency("BMD", "060", "Bermudian Dollar", "$", 2)
 
-pub const bnd = Currency("BND", "096", "Brunei Dollar", "$")
+pub const bnd = Currency("BND", "096", "Brunei Dollar", "$", 2)
 
-pub const bob = Currency("BOB", "068", "Bolivian Boliviano", "Bs")
+pub const bob = Currency("BOB", "068", "Bolivian Boliviano", "Bs", 2)
 
-pub const brl = Currency("BRL", "986", "Brazilian Real", "R$")
+pub const brl = Currency("BRL", "986", "Brazilian Real", "R$", 2)
 
-pub const bsd = Currency("BSD", "044", "Bahamian Dollar", "$")
+pub const bsd = Currency("BSD", "044", "Bahamian Dollar", "$", 2)
 
-pub const btn = Currency("BTN", "064", "Bhutanese Ngultrum", "Nu.")
+pub const btn = Currency("BTN", "064", "Bhutanese Ngultrum", "Nu.", 2)
 
-pub const bwp = Currency("BWP", "072", "Botswana Pula", "P")
+pub const bwp = Currency("BWP", "072", "Botswana Pula", "P", 2)
 
-pub const byn = Currency("BYN", "933", "Belarusian Ruble", "Br")
+pub const byn = Currency("BYN", "933", "Belarusian Ruble", "Br", 2)
 
-pub const bzd = Currency("BZD", "084", "Belize Dollar", "$")
+pub const bzd = Currency("BZD", "084", "Belize Dollar", "$", 2)
 
-pub const cad = Currency("CAD", "124", "Canadian Dollar", "$")
+pub const cad = Currency("CAD", "124", "Canadian Dollar", "$", 2)
 
-pub const cdf = Currency("CDF", "976", "Congolese Franc", "FC")
+pub const cdf = Currency("CDF", "976", "Congolese Franc", "FC", 2)
 
-pub const chf = Currency("CHF", "756", "Swiss Franc", "CHF")
+pub const chf = Currency("CHF", "756", "Swiss Franc", "CHF", 2)
 
-pub const clp = Currency("CLP", "152", "Chilean Peso", "$")
+pub const clp = Currency("CLP", "152", "Chilean Peso", "$", 0)
 
-pub const cny = Currency("CNY", "156", "Chinese Yuan Renminbi", "¥")
+pub const cny = Currency("CNY", "156", "Chinese Yuan Renminbi", "¥", 2)
 
-pub const cop = Currency("COP", "170", "Colombian Peso", "$")
+pub const cop = Currency("COP", "170", "Colombian Peso", "$", 2)
 
-pub const crc = Currency("CRC", "188", "Costa Rican Colon", "₡")
+pub const crc = Currency("CRC", "188", "Costa Rican Colon", "₡", 2)
 
-pub const cup = Currency("CUP", "192", "Cuban Peso", "$")
+pub const cup = Currency("CUP", "192", "Cuban Peso", "$", 2)
 
-pub const cuc = Currency("CUC", "931", "Peso Convertible", "$")
+pub const cuc = Currency("CUC", "931", "Peso Convertible", "$", 2)
 
-pub const cve = Currency("CVE", "132", "Cabo Verde Escudo", "$")
+pub const cve = Currency("CVE", "132", "Cabo Verde Escudo", "$", 2)
 
-pub const czk = Currency("CZK", "203", "Czech Koruna", "Kč")
+pub const czk = Currency("CZK", "203", "Czech Koruna", "Kč", 2)
 
-pub const djf = Currency("DJF", "262", "Djibouti Franc", "Fdj")
+pub const djf = Currency("DJF", "262", "Djibouti Franc", "Fdj", 0)
 
-pub const dkk = Currency("DKK", "208", "Danish Krone", "kr")
+pub const dkk = Currency("DKK", "208", "Danish Krone", "kr", 2)
 
-pub const dop = Currency("DOP", "214", "Dominican Peso", "$")
+pub const dop = Currency("DOP", "214", "Dominican Peso", "$", 2)
 
-pub const dzd = Currency("DZD", "012", "Algerian Dinar", "دج")
+pub const dzd = Currency("DZD", "012", "Algerian Dinar", "دج", 2)
 
-pub const egp = Currency("EGP", "818", "Egyptian Pound", "£")
+pub const egp = Currency("EGP", "818", "Egyptian Pound", "£", 2)
 
-pub const ern = Currency("ERN", "232", "Eritrean Nakfa", "Nfk")
+pub const ern = Currency("ERN", "232", "Eritrean Nakfa", "Nfk", 2)
 
-pub const etb = Currency("ETB", "230", "Ethiopian Birr", "Br")
+pub const etb = Currency("ETB", "230", "Ethiopian Birr", "Br", 2)
 
-pub const eur = Currency("EUR", "978", "Euro", "€")
+pub const eur = Currency("EUR", "978", "Euro", "€", 2)
 
-pub const fjd = Currency("FJD", "242", "Fiji Dollar", "$")
+pub const fjd = Currency("FJD", "242", "Fiji Dollar", "$", 2)
 
-pub const fkp = Currency("FKP", "238", "Falkland Islands Pound", "£")
+pub const fkp = Currency("FKP", "238", "Falkland Islands Pound", "£", 2)
 
-pub const gbp = Currency("GBP", "826", "Pound Sterling", "£")
+pub const gbp = Currency("GBP", "826", "Pound Sterling", "£", 2)
 
-pub const gel = Currency("GEL", "981", "Georgian Lari", "₾")
+pub const gel = Currency("GEL", "981", "Georgian Lari", "₾", 2)
 
-pub const ghs = Currency("GHS", "936", "Ghana Cedi", "₵")
+pub const ghs = Currency("GHS", "936", "Ghana Cedi", "₵", 2)
 
-pub const gip = Currency("GIP", "292", "Gibraltar Pound", "£")
+pub const gip = Currency("GIP", "292", "Gibraltar Pound", "£", 2)
 
-pub const gmd = Currency("GMD", "270", "Gambian Dalasi", "D")
+pub const gmd = Currency("GMD", "270", "Gambian Dalasi", "D", 2)
 
-pub const gnf = Currency("GNF", "324", "Guinean Franc", "FG")
+pub const gnf = Currency("GNF", "324", "Guinean Franc", "FG", 0)
 
-pub const gtq = Currency("GTQ", "320", "Guatemalan Quetzal", "Q")
+pub const gtq = Currency("GTQ", "320", "Guatemalan Quetzal", "Q", 2)
 
-pub const gyd = Currency("GYD", "328", "Guyana Dollar", "$")
+pub const gyd = Currency("GYD", "328", "Guyana Dollar", "$", 2)
 
-pub const hkd = Currency("HKD", "344", "Hong Kong Dollar", "$")
+pub const hkd = Currency("HKD", "344", "Hong Kong Dollar", "$", 2)
 
-pub const hnl = Currency("HNL", "340", "Hondurasi Lempira", "L")
+pub const hnl = Currency("HNL", "340", "Hondurasi Lempira", "L", 2)
 
-pub const hrk = Currency("HRK", "191", "Croatian Kuna", "kn")
+pub const hrk = Currency("HRK", "191", "Croatian Kuna", "kn", 2)
 
-pub const htg = Currency("HTG", "332", "Haitian Gourde", "G")
+pub const htg = Currency("HTG", "332", "Haitian Gourde", "G", 2)
 
-pub const huf = Currency("HUF", "348", "Hungarian Forint", "Ft")
+pub const huf = Currency("HUF", "348", "Hungarian Forint", "Ft", 2)
 
-pub const idr = Currency("IDR", "360", "Indian Rupiah", "Rp")
+pub const idr = Currency("IDR", "360", "Indian Rupiah", "Rp", 2)
 
-pub const ils = Currency("ILS", "376", "Israeli New Sheqel", "₪")
+pub const ils = Currency("ILS", "376", "Israeli New Sheqel", "₪", 2)
 
-pub const inr = Currency("INR", "356", "Indian Rupee", "₹")
+pub const inr = Currency("INR", "356", "Indian Rupee", "₹", 2)
 
-pub const iqd = Currency("IQD", "368", "Iraqi Dinar", "ع.د")
+pub const iqd = Currency("IQD", "368", "Iraqi Dinar", "ع.د", 3)
 
-pub const irr = Currency("IRR", "364", "Iranian Rial", "﷼")
+pub const irr = Currency("IRR", "364", "Iranian Rial", "﷼", 2)
 
-pub const isk = Currency("ISK", "352", "Icelandic Króna", "kr")
+pub const isk = Currency("ISK", "352", "Icelandic Króna", "kr", 0)
 
-pub const jmd = Currency("JMD", "388", "Jamaican Dollar", "$")
+pub const jmd = Currency("JMD", "388", "Jamaican Dollar", "$", 2)
 
-pub const jod = Currency("JOD", "400", "Jordanian Dinar", "د.ا")
+pub const jod = Currency("JOD", "400", "Jordanian Dinar", "د.ا", 3)
 
-pub const jpy = Currency("JPY", "392", "Japanese Yen", "¥")
+pub const jpy = Currency("JPY", "392", "Japanese Yen", "¥", 0)
 
-pub const kes = Currency("KES", "404", "Kenyan Shilling", "Sh")
+pub const kes = Currency("KES", "404", "Kenyan Shilling", "Sh", 2)
 
-pub const kgs = Currency("KGS", "417", "Kyrgyzstani Som", "лв")
+pub const kgs = Currency("KGS", "417", "Kyrgyzstani Som", "лв", 2)
 
-pub const khr = Currency("KHR", "116", "Cambodian Riel", "៛")
+pub const khr = Currency("KHR", "116", "Cambodian Riel", "៛", 2)
 
-pub const kmf = Currency("KMF", "174", "Comorian Franc", "CF")
+pub const kmf = Currency("KMF", "174", "Comorian Franc", "CF", 0)
 
-pub const kpw = Currency("KPW", "408", "North Korean Won", "₩")
+pub const kpw = Currency("KPW", "408", "North Korean Won", "₩", 2)
 
-pub const krw = Currency("KRW", "410", "South Korean Won", "₩")
+pub const krw = Currency("KRW", "410", "South Korean Won", "₩", 0)
 
-pub const kwd = Currency("KWD", "414", "Kuwaiti Dinar", "د.ك")
+pub const kwd = Currency("KWD", "414", "Kuwaiti Dinar", "د.ك", 3)
 
-pub const kyd = Currency("KYD", "136", "Cayman Islands Dollar", "$")
+pub const kyd = Currency("KYD", "136", "Cayman Islands Dollar", "$", 2)
 
-pub const kzt = Currency("KZT", "398", "Kazakhstani Tenge", "₸")
+pub const kzt = Currency("KZT", "398", "Kazakhstani Tenge", "₸", 2)
 
-pub const lak = Currency("LAK", "418", "Lao Kip", "₭")
+pub const lak = Currency("LAK", "418", "Lao Kip", "₭", 2)
 
-pub const lbp = Currency("LBP", "422", "Lebanese Pound", "ل.ل")
+pub const lbp = Currency("LBP", "422", "Lebanese Pound", "ل.ل", 2)
 
-pub const lkr = Currency("LKR", "144", "Sri Lankan Rupee", "Rs")
+pub const lkr = Currency("LKR", "144", "Sri Lankan Rupee", "Rs", 2)
 
-pub const lrd = Currency("LRD", "430", "Liberian Dollar", "$")
+pub const lrd = Currency("LRD", "430", "Liberian Dollar", "$", 2)
 
-pub const lsl = Currency("LSL", "426", "Loti", "L")
+pub const lsl = Currency("LSL", "426", "Loti", "L", 2)
 
-pub const lyd = Currency("LYD", "434", "Libyan Dinar", "ل.د")
+pub const lyd = Currency("LYD", "434", "Libyan Dinar", "ل.د", 3)
 
-pub const mad = Currency("MAD", "504", "Moroccan Dirham", "د.م.")
+pub const mad = Currency("MAD", "504", "Moroccan Dirham", "د.م.", 2)
 
-pub const mdl = Currency("MDL", "498", "Moldovan Leu", "L")
+pub const mdl = Currency("MDL", "498", "Moldovan Leu", "L", 2)
 
-pub const mga = Currency("MGA", "969", "Malagasy Ariary", "Ar")
+pub const mga = Currency("MGA", "969", "Malagasy Ariary", "Ar", 2)
 
-pub const mkd = Currency("MKD", "807", "Macedonian Denar", "ден")
+pub const mkd = Currency("MKD", "807", "Macedonian Denar", "ден", 2)
 
-pub const mmk = Currency("MMK", "104", "Myanmar Kyat", "K")
+pub const mmk = Currency("MMK", "104", "Myanmar Kyat", "K", 2)
 
-pub const mnt = Currency("MNT", "496", "Mongolian Tögrög", "₮")
+pub const mnt = Currency("MNT", "496", "Mongolian Tögrög", "₮", 2)
 
-pub const mop = Currency("MOP", "446", "Macanese Pataca", "P")
+pub const mop = Currency("MOP", "446", "Macanese Pataca", "P", 2)
 
-pub const mru = Currency("MRU", "929", "Mauritanian Ouguiya", "UM")
+pub const mru = Currency("MRU", "929", "Mauritanian Ouguiya", "UM", 2)
 
-pub const mur = Currency("MUR", "480", "Mauritian Rupee", "₨")
+pub const mur = Currency("MUR", "480", "Mauritian Rupee", "₨", 2)
 
-pub const mvr = Currency("MVR", "462", "Maldivian Rufiyaa", ".ރ")
+pub const mvr = Currency("MVR", "462", "Maldivian Rufiyaa", ".ރ", 2)
 
-pub const mwk = Currency("MWK", "454", "Malawian Kwacha", "MK")
+pub const mwk = Currency("MWK", "454", "Malawian Kwacha", "MK", 2)
 
-pub const mxn = Currency("MXN", "484", "Mexican Peso", "$")
+pub const mxn = Currency("MXN", "484", "Mexican Peso", "$", 2)
 
-pub const myr = Currency("MYR", "458", "Malaysian Ringgit", "RM")
+pub const myr = Currency("MYR", "458", "Malaysian Ringgit", "RM", 2)
 
-pub const mzn = Currency("MZN", "943", "Mozambican Metical", "MT")
+pub const mzn = Currency("MZN", "943", "Mozambican Metical", "MT", 2)
 
-pub const nad = Currency("NAD", "516", "Namibian Dollar", "$")
+pub const nad = Currency("NAD", "516", "Namibian Dollar", "$", 2)
 
-pub const ngn = Currency("NGN", "566", "Nigerian Naira", "₦")
+pub const ngn = Currency("NGN", "566", "Nigerian Naira", "₦", 2)
 
-pub const nio = Currency("NIO", "558", "Nicaraguan Córdoba", "C$")
+pub const nio = Currency("NIO", "558", "Nicaraguan Córdoba", "C$", 2)
 
-pub const nok = Currency("NOK", "578", "Norwegian Krone", "kr")
+pub const nok = Currency("NOK", "578", "Norwegian Krone", "kr", 2)
 
-pub const npr = Currency("NPR", "524", "Nepalese Rupee", "₨")
+pub const npr = Currency("NPR", "524", "Nepalese Rupee", "₨", 2)
 
-pub const nzd = Currency("NZD", "554", "New Zealand Dollar", "$")
+pub const nzd = Currency("NZD", "554", "New Zealand Dollar", "$", 2)
 
-pub const omr = Currency("OMR", "512", "Omani Rial", "ر.ع.")
+pub const omr = Currency("OMR", "512", "Omani Rial", "ر.ع.", 3)
 
-pub const pab = Currency("PAB", "590", "Panamanian Balboa", "B/.")
+pub const pab = Currency("PAB", "590", "Panamanian Balboa", "B/.", 2)
 
-pub const pen = Currency("PEN", "604", "Peruvian Sol", "S/")
+pub const pen = Currency("PEN", "604", "Peruvian Sol", "S/", 2)
 
-pub const pgk = Currency("PGK", "598", "Papua New Guinean Kina", "K")
+pub const pgk = Currency("PGK", "598", "Papua New Guinean Kina", "K", 2)
 
-pub const php = Currency("PHP", "608", "Philippine Peso", "₱")
+pub const php = Currency("PHP", "608", "Philippine Peso", "₱", 2)
 
-pub const pkr = Currency("PKR", "586", "Pakistani Rupee", "₨")
+pub const pkr = Currency("PKR", "586", "Pakistani Rupee", "₨", 2)
 
-pub const pln = Currency("PLN", "985", "Polish Złoty", "zł")
+pub const pln = Currency("PLN", "985", "Polish Złoty", "zł", 2)
 
-pub const pyg = Currency("PYG", "600", "Paraguayan Guaraní", "₲")
+pub const pyg = Currency("PYG", "600", "Paraguayan Guaraní", "₲", 0)
 
-pub const qar = Currency("QAR", "634", "Qatari Riyal", "ر.ق")
+pub const qar = Currency("QAR", "634", "Qatari Riyal", "ر.ق", 2)
 
-pub const ron = Currency("RON", "946", "Romanian Leu", "lei")
+pub const ron = Currency("RON", "946", "Romanian Leu", "lei", 2)
 
-pub const rsd = Currency("RSD", "941", "Serbian Dinar", "дин")
+pub const rsd = Currency("RSD", "941", "Serbian Dinar", "дин", 2)
 
-pub const rub = Currency("RUB", "643", "Russian Ruble", "₽")
+pub const rub = Currency("RUB", "643", "Russian Ruble", "₽", 2)
 
-pub const rwf = Currency("RWF", "646", "Rwandan Franc", "FRw")
+pub const rwf = Currency("RWF", "646", "Rwandan Franc", "FRw", 0)
 
-pub const sar = Currency("SAR", "682", "Saudi Riyal", "ر.س")
+pub const sar = Currency("SAR", "682", "Saudi Riyal", "ر.س", 2)
 
-pub const sbd = Currency("SBD", "090", "Solomon Islands Dollar", "$")
+pub const sbd = Currency("SBD", "090", "Solomon Islands Dollar", "$", 2)
 
-pub const scr = Currency("SCR", "690", "Seychellois Rupee", "₨")
+pub const scr = Currency("SCR", "690", "Seychellois Rupee", "₨", 2)
 
-pub const sdg = Currency("SDG", "938", "Sudanese Pound", "ج.س.")
+pub const sdg = Currency("SDG", "938", "Sudanese Pound", "ج.س.", 2)
 
-pub const sek = Currency("SEK", "752", "Swedish Krona", "kr")
+pub const sek = Currency("SEK", "752", "Swedish Krona", "kr", 2)
 
-pub const sgd = Currency("SGD", "702", "Singapore Dollar", "$")
+pub const sgd = Currency("SGD", "702", "Singapore Dollar", "$", 2)
 
-pub const shp = Currency("SHP", "654", "Saint Helena Pound", "£")
+pub const shp = Currency("SHP", "654", "Saint Helena Pound", "£", 2)
 
-pub const sle = Currency("SLE", "925", "Sierra Leonean Leone", "Le")
+pub const sle = Currency("SLE", "925", "Sierra Leonean Leone", "Le", 2)
 
-pub const sos = Currency("SOS", "706", "Somali Shilling", "Sh")
+pub const sos = Currency("SOS", "706", "Somali Shilling", "Sh", 2)
 
-pub const srd = Currency("SRD", "968", "Surinamese Dollar", "$")
+pub const srd = Currency("SRD", "968", "Surinamese Dollar", "$", 2)
 
-pub const ssp = Currency("SSP", "728", "South Sudanese Pound", "£")
+pub const ssp = Currency("SSP", "728", "South Sudanese Pound", "£", 2)
 
-pub const stn = Currency("STN", "930", "São Tomé and Príncipe Dobra", "Db")
+pub const stn = Currency(
+  "STN",
+  "930",
+  "São Tomé and Príncipe Dobra",
+  "Db",
+  2,
+)
 
-pub const svc = Currency("SVC", "222", "El Salvador Colon", "₡")
+pub const svc = Currency("SVC", "222", "El Salvador Colon", "₡", 2)
 
-pub const syp = Currency("SYP", "760", "Syrian Pound", "£")
+pub const syp = Currency("SYP", "760", "Syrian Pound", "£", 2)
 
-pub const szl = Currency("SZL", "748", "Swazi Lilangeni", "L")
+pub const szl = Currency("SZL", "748", "Swazi Lilangeni", "L", 2)
 
-pub const thb = Currency("THB", "764", "Thai Baht", "฿")
+pub const thb = Currency("THB", "764", "Thai Baht", "฿", 2)
 
-pub const tjs = Currency("TJS", "972", "Tajikistani Somoni", "ЅМ")
+pub const tjs = Currency("TJS", "972", "Tajikistani Somoni", "ЅМ", 2)
 
-pub const tmt = Currency("TMT", "934", "Turkmenistani New Manat", "m")
+pub const tmt = Currency("TMT", "934", "Turkmenistani New Manat", "m", 2)
 
-pub const tnd = Currency("TND", "788", "Tunisian Dinar", "د.ت")
+pub const tnd = Currency("TND", "788", "Tunisian Dinar", "د.ت", 3)
 
-pub const top = Currency("TOP", "776", "Tongan Paʻanga", "T$")
+pub const top = Currency("TOP", "776", "Tongan Paʻanga", "T$", 2)
 
-pub const try = Currency("TRY", "949", "Turkish Lira", "₺")
+pub const try = Currency("TRY", "949", "Turkish Lira", "₺", 2)
 
-pub const ttd = Currency("TTD", "780", "Trinidad and Tobago Dollar", "$")
+pub const ttd = Currency("TTD", "780", "Trinidad and Tobago Dollar", "$", 2)
 
-pub const twd = Currency("TWD", "901", "New Taiwan Dollar", "$")
+pub const twd = Currency("TWD", "901", "New Taiwan Dollar", "$", 2)
 
-pub const tzs = Currency("TZS", "834", "Tanzanian Shilling", "Sh")
+pub const tzs = Currency("TZS", "834", "Tanzanian Shilling", "Sh", 2)
 
-pub const uah = Currency("UAH", "980", "Ukrainian Hryvnia", "₴")
+pub const uah = Currency("UAH", "980", "Ukrainian Hryvnia", "₴", 2)
 
-pub const ugx = Currency("UGX", "800", "Ugandan Shilling", "Sh")
+pub const ugx = Currency("UGX", "800", "Ugandan Shilling", "Sh", 0)
 
-pub const usd = Currency("USD", "840", "United States Dollar", "$")
+pub const usd = Currency("USD", "840", "United States Dollar", "$", 2)
 
-pub const uyu = Currency("UYU", "858", "Uruguayan Peso", "$U")
+pub const uyu = Currency("UYU", "858", "Uruguayan Peso", "$U", 2)
 
-pub const uyw = Currency("UYW", "927", "Unidad Previsional", "UP")
+pub const uyw = Currency("UYW", "927", "Unidad Previsional", "UP", 4)
 
-pub const uzs = Currency("UZS", "860", "Uzbekistani So'm", "лв")
+pub const uzs = Currency("UZS", "860", "Uzbekistani So'm", "лв", 2)
 
-pub const ved = Currency("VED", "926", "Venezuelan Bolívar", "Bs.")
+pub const ved = Currency("VED", "926", "Venezuelan Bolívar", "Bs.", 2)
 
-pub const ves = Currency("VES", "928", "Venezuelan Bolívar", "Bs.")
+pub const ves = Currency("VES", "928", "Venezuelan Bolívar", "Bs.", 2)
 
-pub const vnd = Currency("VND", "704", "Vietnamese Đồng", "₫")
+pub const vnd = Currency("VND", "704", "Vietnamese Đồng", "₫", 0)
 
-pub const vuv = Currency("VUV", "548", "Vanuatu Vatu", "VT")
+pub const vuv = Currency("VUV", "548", "Vanuatu Vatu", "VT", 0)
 
-pub const wst = Currency("WST", "882", "Samoan Tālā", "T")
+pub const wst = Currency("WST", "882", "Samoan Tālā", "T", 2)
 
-pub const xaf = Currency("XAF", "950", "Central African CFA Franc", "F.CFA")
+pub const xaf = Currency("XAF", "950", "Central African CFA Franc", "F.CFA", 0)
 
-pub const xcd = Currency("XCD", "951", "East Caribbean Dollar", "$")
+pub const xcd = Currency("XCD", "951", "East Caribbean Dollar", "$", 2)
 
-pub const xof = Currency("XOF", "952", "West African CFA Franc", "F.CFA")
+pub const xof = Currency("XOF", "952", "West African CFA Franc", "F.CFA", 0)
 
-pub const xpf = Currency("XPF", "953", "CFP Franc", "₣")
+pub const xpf = Currency("XPF", "953", "CFP Franc", "₣", 0)
 
-pub const yer = Currency("YER", "886", "Yemeni Rial", "﷼")
+pub const yer = Currency("YER", "886", "Yemeni Rial", "﷼", 2)
 
-pub const zar = Currency("ZAR", "710", "South African Rand", "R")
+pub const zar = Currency("ZAR", "710", "South African Rand", "R", 2)
 
-pub const zmw = Currency("ZMW", "967", "Zambian Kwacha", "ZK")
+pub const zmw = Currency("ZMW", "967", "Zambian Kwacha", "ZK", 2)
 
-pub const zwg = Currency("ZWG", "924", "Zimbabwean Gold", "ZiG")
+pub const zwg = Currency("ZWG", "924", "Zimbabwean Gold", "ZiG", 2)
 
 pub const known_currencies = [
   aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bhd, bif,
@@ -347,6 +360,8 @@ pub opaque type Currency {
     String,
     // symbol
     String,
+    // minor units
+    Int,
   )
 }
 
@@ -373,6 +388,11 @@ pub fn display_name(currency: Currency) -> String {
 pub fn symbol(currency: Currency) -> String {
   let Currency(_, _, _, symbol, ..) = currency
   symbol
+}
+
+pub fn minor_units(currency: Currency) -> Int {
+  let Currency(_, _, _, _, minor_units, ..) = currency
+  minor_units
 }
 
 pub fn from_alpha_code(

@@ -70,4 +70,8 @@ fn common_assertions(actual: Currency, expected: TestCurrency) {
   actual
   |> dime.numeric_code
   |> should.equal(expected.numeric_code)
+
+  actual
+  |> dime.minor_units
+  |> should.equal(expected.minor_units)
 }
