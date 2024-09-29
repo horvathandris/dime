@@ -1,8 +1,9 @@
-import dime
+import dime.{type Currency}
 import gleam/dynamic.{field, int, list, string}
 import gleam/io
 import gleam/json
 import gleam/list
+import gleam/result
 import gleeunit/should
 import simplifile
 
@@ -34,20 +35,38 @@ pub fn iso_4217__test() {
     json.decode(from: data, using: test_currency_decoder)
 
   test_currencies
-  |> list.each(fn(test_currency) {
-    io.print(test_currency.alpha_code)
-    let curr =
-      dime.from_alpha_code(test_currency.alpha_code)
-      |> should.be_ok
+  |> list.each(test_from_alpha_code)
 
-    curr
-    |> dime.alpha_code
-    |> should.equal(test_currency.alpha_code)
+  test_currencies
+  |> list.each(test_from_numeric_code)
+}
 
-    curr
-    |> dime.numeric_code
-    |> should.equal(test_currency.numeric_code)
-
-    io.println(" ok")
+fn test_from_alpha_code(test_currency: TestCurrency) {
+  dime.from_alpha_code(test_currency.alpha_code)
+  |> result.map_error(fn(error) {
+    io.println("Failed to parse \"" <> test_currency.alpha_code <> "\"")
+    error
   })
+  |> should.be_ok
+  |> common_assertions(test_currency)
+}
+
+fn test_from_numeric_code(test_currency: TestCurrency) {
+  dime.from_numeric_code(test_currency.numeric_code)
+  |> result.map_error(fn(error) {
+    io.println("Failed to parse \"" <> test_currency.numeric_code <> "\"")
+    error
+  })
+  |> should.be_ok
+  |> common_assertions(test_currency)
+}
+
+fn common_assertions(actual: Currency, expected: TestCurrency) {
+  actual
+  |> dime.alpha_code
+  |> should.equal(expected.alpha_code)
+
+  actual
+  |> dime.numeric_code
+  |> should.equal(expected.numeric_code)
 }
