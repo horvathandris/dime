@@ -30,8 +30,22 @@ Further documentation can be found at <https://hexdocs.pm/dime>.
 
 ## Development
 
+### Updating the ISO-4217 dataset
+
+To update the [dataset](test/data/currencies.json) that is used to [test the ISO-4217 compliance](test/iso_4217_test.gleam) of the library,
+first run the script below.
+
 ```sh
-gleam test  # Run the tests
+./scripts/extract_data.sh
+```
+
+It downloads the latest currency dataset from the website of the standard's maintainer
+and converts it to a JSON file at `test/data/currencies.json`.
+
+Then, to validate the compliance of the library, run the test suite.
+
+```sh
+gleam test
 ```
 
 ## Roadmap

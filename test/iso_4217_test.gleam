@@ -17,22 +17,23 @@ type TestCurrency {
   )
 }
 
+fn test_currency_list_decoder() {
+  dynamic.decode5(
+    TestCurrency,
+    field("country", of: string),
+    field("display_name", of: string),
+    field("alpha_code", of: string),
+    field("numeric_code", of: string),
+    field("minor_units", of: int),
+  )
+  |> list
+}
+
 pub fn iso_4217__test() {
   let assert Ok(data) = simplifile.read("test/data/currencies.json")
 
-  let test_currency_decoder =
-    dynamic.decode5(
-      TestCurrency,
-      field("country", of: string),
-      field("display_name", of: string),
-      field("alpha_code", of: string),
-      field("numeric_code", of: string),
-      field("minor_units", of: int),
-    )
-    |> list
-
   let assert Ok(test_currencies) =
-    json.decode(from: data, using: test_currency_decoder)
+    json.decode(from: data, using: test_currency_list_decoder())
 
   test_currencies
   |> list.each(test_from_alpha_code)

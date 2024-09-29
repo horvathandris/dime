@@ -24,7 +24,7 @@ pub fn each_known_currency_is_parsable__test() {
   |> should.be_ok
 }
 
-pub fn static_code_checks__test() {
+pub fn static_integrity_checks__test() {
   let assert Ok(contents) = simplifile.read("src/dime.gleam")
 
   let assert Ok(re) = regex.from_string("pub const ([a-z]{3}) = Currency\\(")
@@ -37,11 +37,11 @@ pub fn static_code_checks__test() {
     |> should.be_ok
     |> should.be_some
 
-  defined_const_has_alpha_code_as_name__test(const_name)
-  defined_const_is_in_known_currencies__test(const_name)
+  assert_defined_const_has_alpha_code_as_name(const_name)
+  assert_defined_const_is_in_known_currencies(const_name)
 }
 
-fn defined_const_has_alpha_code_as_name__test(const_name: String) {
+fn assert_defined_const_has_alpha_code_as_name(const_name: String) {
   const_name
   |> dime.from_alpha_code
   |> should.be_ok
@@ -50,7 +50,7 @@ fn defined_const_has_alpha_code_as_name__test(const_name: String) {
   |> should.equal(const_name)
 }
 
-fn defined_const_is_in_known_currencies__test(const_name: String) {
+fn assert_defined_const_is_in_known_currencies(const_name: String) {
   dime.known_currencies
   |> list.find(fn(currency) {
     const_name
