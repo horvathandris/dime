@@ -11,7 +11,7 @@ pub fn main() {
 }
 
 pub fn each_known_currency_is_parsable__test() {
-  use currency <- list.each(dime.known_currencies)
+  use currency <- list.each(dime.known_currencies())
 
   currency
   |> dime.alpha_code
@@ -51,7 +51,7 @@ fn assert_defined_const_has_alpha_code_as_name(const_name: String) {
 }
 
 fn assert_defined_const_is_in_known_currencies(const_name: String) {
-  dime.known_currencies
+  dime.known_currencies()
   |> list.find(fn(currency) {
     const_name
     == currency
