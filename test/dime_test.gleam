@@ -1,6 +1,6 @@
 import dime
+import glance.{Call, Constant, Definition, Module, Public, Variable}
 import gleam/list
-import gleam/regex
 import gleam/string
 import gleeunit
 import gleeunit/should
@@ -27,18 +27,20 @@ pub fn each_known_currency_is_parsable__test() {
 pub fn static_integrity_checks__test() {
   let assert Ok(contents) = simplifile.read("src/dime.gleam")
 
-  let assert Ok(re) = regex.from_string("pub const ([a-z]{3}) = Currency\\(")
+  let assert Ok(Module(_, _, _, const_definitions, _)) = glance.module(contents)
 
-  use match <- list.each(regex.scan(re, contents))
-
-  let const_name =
-    match.submatches
-    |> list.first
-    |> should.be_ok
-    |> should.be_some
-
-  assert_defined_const_has_alpha_code_as_name(const_name)
-  assert_defined_const_is_in_known_currencies(const_name)
+  const_definitions
+  |> list.filter_map(fn(definition) {
+    let Definition(_, Constant(name, visibility, _, expression)) = definition
+    case visibility, expression {
+      Public, Call(Variable("Currency"), _) -> Ok(name)
+      _, _ -> Error(Nil)
+    }
+  })
+  |> list.each(fn(const_name) {
+    assert_defined_const_has_alpha_code_as_name(const_name)
+    assert_defined_const_is_in_known_currencies(const_name)
+  })
 }
 
 fn assert_defined_const_has_alpha_code_as_name(const_name: String) {
