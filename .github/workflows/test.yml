@@ -1,4 +1,4 @@
-name: test
+name: Lint and Test
 
 on:
   push:
@@ -11,12 +11,44 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: erlef/setup-beam@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up BEAM
+        uses: erlef/setup-beam@v1
         with:
-          otp-version: "27.1"
-          gleam-version: "1.5.1"
-          rebar3-version: "3"
-      - run: gleam deps download
-      - run: gleam format --check src test
-      - run: gleam test
+          version-file: .tool-versions
+          version-type: strict
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version-file: .tool-versions
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .tool-versions
+
+      - name: Download project dependencies
+        run: gleam deps download
+
+      - name: Format
+        run: gleam format --check src test
+
+      - name: Test on Erlang
+        run: gleam test --target erl
+
+      - name: Test on JavaScript / Node.js
+        run: gleam test --target js --runtime nodejs
+
+      - name: Test on JavaScript / Deno
+        run: gleam test --target js --runtime deno
+
+      - name: Test on JavaScript / Bun
+        run: gleam test --target js --runtime bun

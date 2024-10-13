@@ -14,7 +14,8 @@ gleam_json = ">= 2.0.0 and < 3.0.0"
 cactus = ">= 1.1.0 and < 2.0.0"
 glance = ">= 1.0.0 and < 2.0.0"
 
+[javascript.deno]
+allow_read = ["gleam.toml", "src", "test", "build"]
+
 [cactus.pre-commit]
-actions = [
-  { command = "format", kind = "sub_command", args = ["--check"] },
-]
+actions = [{ command = "format", kind = "sub_command", args = ["--check"] }]

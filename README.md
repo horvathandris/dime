@@ -57,10 +57,10 @@ first run the script below.
 It downloads the latest currency dataset from the website of the standard's maintainer
 and converts it to a JSON file at `test/data/currencies.json`.
 
-Then, to validate the compliance of the library, run the test suite.
+Then, to validate the compliance of the library, run the test suite for all targets and runtimes.
 
 ```sh
-gleam test
+./scripts/matrix-test.sh
 ```
 
 ## Roadmap
