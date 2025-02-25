@@ -1,5 +1,5 @@
 name = "dime"
-version = "1.0.0"
+version = "1.0.1"
 description = "A ISO-4217 currency library for Gleam"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "horvathandris", repo = "dime" }

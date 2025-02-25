@@ -399,13 +399,6 @@
     "minor_units": 2
   },
   {
-    "country": "CUBA",
-    "display_name": "Peso Convertible",
-    "alpha_code": "CUC",
-    "numeric_code": "931",
-    "minor_units": 2
-  },
-  {
     "country": "CURAÇAO",
     "display_name": "Netherlands Antillean Guilder",
     "alpha_code": "ANG",

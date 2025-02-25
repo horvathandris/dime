@@ -1,13 +1,7 @@
 import gleam/result
 import gleam/string
 
-pub const aed = Currency(
-  "AED",
-  "784",
-  "United Arab Emirates Dirham",
-  "د.إ",
-  2,
-)
+pub const aed = Currency("AED", "784", "United Arab Emirates Dirham", "د.إ", 2)
 
 pub const afn = Currency("AFN", "971", "Afghan Afghani", "؋", 2)
 
@@ -78,8 +72,6 @@ pub const cop = Currency("COP", "170", "Colombian Peso", "$", 2)
 pub const crc = Currency("CRC", "188", "Costa Rican Colon", "₡", 2)
 
 pub const cup = Currency("CUP", "192", "Cuban Peso", "$", 2)
-
-pub const cuc = Currency("CUC", "931", "Peso Convertible", "$", 2)
 
 pub const cve = Currency("CVE", "132", "Cabo Verde Escudo", "$", 2)
 
@@ -267,13 +259,7 @@ pub const srd = Currency("SRD", "968", "Surinamese Dollar", "$", 2)
 
 pub const ssp = Currency("SSP", "728", "South Sudanese Pound", "£", 2)
 
-pub const stn = Currency(
-  "STN",
-  "930",
-  "São Tomé and Príncipe Dobra",
-  "Db",
-  2,
-)
+pub const stn = Currency("STN", "930", "São Tomé and Príncipe Dobra", "Db", 2)
 
 pub const svc = Currency("SVC", "222", "El Salvador Colon", "₡", 2)
 
@@ -338,18 +324,166 @@ pub const zmw = Currency("ZMW", "967", "Zambian Kwacha", "ZK", 2)
 pub const zwg = Currency("ZWG", "924", "Zimbabwean Gold", "ZiG", 2)
 
 /// A list of all the currencies known to this library.
-/// 
+///
 const all_currencies = [
-  aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bhd, bif,
-  bmd, bnd, bob, brl, bsd, btn, bwp, byn, bzd, cad, cdf, chf, clp, cny, cop, crc,
-  cup, cuc, cve, czk, djf, dkk, dop, dzd, egp, ern, etb, eur, fjd, fkp, gbp, gel,
-  ghs, gip, gmd, gnf, gtq, gyd, hkd, hnl, hrk, htg, huf, idr, ils, inr, iqd, irr,
-  isk, jmd, jod, jpy, kes, kgs, khr, kmf, kpw, krw, kwd, kyd, kzt, lak, lbp, lkr,
-  lrd, lsl, lyd, mad, mdl, mga, mkd, mmk, mnt, mop, mru, mur, mvr, mwk, mxn, myr,
-  mzn, nad, ngn, nio, nok, npr, nzd, omr, pab, pen, pgk, php, pkr, pln, pyg, qar,
-  ron, rsd, rub, rwf, sar, sbd, scr, sdg, sek, sgd, shp, sle, sos, srd, ssp, stn,
-  svc, syp, szl, thb, tjs, tmt, tnd, top, try, ttd, twd, tzs, uah, ugx, usd, uyu,
-  uyw, uzs, ved, ves, vnd, vuv, wst, xaf, xcd, xof, xpf, yer, zar, zmw, zwg,
+  aed,
+  afn,
+  all,
+  amd,
+  ang,
+  aoa,
+  ars,
+  aud,
+  awg,
+  azn,
+  bam,
+  bbd,
+  bdt,
+  bgn,
+  bhd,
+  bif,
+  bmd,
+  bnd,
+  bob,
+  brl,
+  bsd,
+  btn,
+  bwp,
+  byn,
+  bzd,
+  cad,
+  cdf,
+  chf,
+  clp,
+  cny,
+  cop,
+  crc,
+  cup,
+  cve,
+  czk,
+  djf,
+  dkk,
+  dop,
+  dzd,
+  egp,
+  ern,
+  etb,
+  eur,
+  fjd,
+  fkp,
+  gbp,
+  gel,
+  ghs,
+  gip,
+  gmd,
+  gnf,
+  gtq,
+  gyd,
+  hkd,
+  hnl,
+  hrk,
+  htg,
+  huf,
+  idr,
+  ils,
+  inr,
+  iqd,
+  irr,
+  isk,
+  jmd,
+  jod,
+  jpy,
+  kes,
+  kgs,
+  khr,
+  kmf,
+  kpw,
+  krw,
+  kwd,
+  kyd,
+  kzt,
+  lak,
+  lbp,
+  lkr,
+  lrd,
+  lsl,
+  lyd,
+  mad,
+  mdl,
+  mga,
+  mkd,
+  mmk,
+  mnt,
+  mop,
+  mru,
+  mur,
+  mvr,
+  mwk,
+  mxn,
+  myr,
+  mzn,
+  nad,
+  ngn,
+  nio,
+  nok,
+  npr,
+  nzd,
+  omr,
+  pab,
+  pen,
+  pgk,
+  php,
+  pkr,
+  pln,
+  pyg,
+  qar,
+  ron,
+  rsd,
+  rub,
+  rwf,
+  sar,
+  sbd,
+  scr,
+  sdg,
+  sek,
+  sgd,
+  shp,
+  sle,
+  sos,
+  srd,
+  ssp,
+  stn,
+  svc,
+  syp,
+  szl,
+  thb,
+  tjs,
+  tmt,
+  tnd,
+  top,
+  try,
+  ttd,
+  twd,
+  tzs,
+  uah,
+  ugx,
+  usd,
+  uyu,
+  uyw,
+  uzs,
+  ved,
+  ves,
+  vnd,
+  vuv,
+  wst,
+  xaf,
+  xcd,
+  xof,
+  xpf,
+  yer,
+  zar,
+  zmw,
+  zwg,
 ]
 
 pub opaque type Currency {
@@ -369,36 +503,36 @@ pub opaque type Currency {
 
 /// Types of errors that can be encountered when parsing
 /// a currency from it's code (alpha or numeric).
-/// 
+///
 pub type CurrencyCodeError {
   InvalidFormat
   UnrecognizedCode
 }
 
 /// Get the 3 character alphabetic code for the currency.
-/// 
+///
 pub fn alpha_code(currency: Currency) -> String {
   let Currency(alpha_code, ..) = currency
   alpha_code
 }
 
 /// Get the 3 character numeric code for the currency.
-/// 
+///
 pub fn numeric_code(currency: Currency) -> String {
   let Currency(_, numeric_code, ..) = currency
   numeric_code
 }
 
 /// Get the display name of the currency in English.
-/// 
+///
 pub fn display_name(currency: Currency) -> String {
   let Currency(_, _, display_name, ..) = currency
   display_name
 }
 
-/// Get the graphical symbol used as a shorthand 
+/// Get the graphical symbol used as a shorthand
 /// representation of the specific currency unit.
-/// 
+///
 pub fn symbol(currency: Currency) -> String {
   let Currency(_, _, _, symbol, ..) = currency
   symbol
@@ -406,23 +540,23 @@ pub fn symbol(currency: Currency) -> String {
 
 /// The decimal relationship between the currency and
 /// it's minor unit, e.g. euro and euro cent.
-/// 
+///
 /// 1, 2 and 3 signify a ratio of 10:1, 100:1 and 1000:1
 /// respectively.
-/// 
+///
 pub fn minor_units(currency: Currency) -> Int {
   let Currency(_, _, _, _, minor_units, ..) = currency
   minor_units
 }
 
 /// Retrieve the list of all the currencies known to this library.
-/// 
+///
 pub fn known_currencies() -> List(Currency) {
   all_currencies
 }
 
 /// Try and retrieve a currency by it's 3 character alphabetic code.
-/// 
+///
 pub fn from_alpha_code(
   currency_code: String,
 ) -> Result(Currency, CurrencyCodeError) {
@@ -467,7 +601,6 @@ fn parse_alpha_code(
     "COP" -> Ok(cop)
     "CRC" -> Ok(crc)
     "CUP" -> Ok(cup)
-    "CUC" -> Ok(cuc)
     "CVE" -> Ok(cve)
     "CZK" -> Ok(czk)
     "DJF" -> Ok(djf)
@@ -598,7 +731,7 @@ fn parse_alpha_code(
 }
 
 /// Try and retrieve a currency by it's 3 character numeric code.
-/// 
+///
 pub fn from_numeric_code(
   currency_code: String,
 ) -> Result(Currency, CurrencyCodeError) {
@@ -642,7 +775,6 @@ fn parse_numeric_code(
     "156" -> Ok(cny)
     "170" -> Ok(cop)
     "188" -> Ok(crc)
-    "931" -> Ok(cuc)
     "192" -> Ok(cup)
     "132" -> Ok(cve)
     "203" -> Ok(czk)
