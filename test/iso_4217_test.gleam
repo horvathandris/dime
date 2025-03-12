@@ -1,5 +1,5 @@
 import dime.{type Currency}
-import gleam/dynamic.{field, int, list, string}
+import gleam/dynamic/decode
 import gleam/io
 import gleam/json
 import gleam/list
@@ -18,22 +18,28 @@ type TestCurrency {
 }
 
 fn test_currency_list_decoder() {
-  dynamic.decode5(
-    TestCurrency,
-    field("country", of: string),
-    field("display_name", of: string),
-    field("alpha_code", of: string),
-    field("numeric_code", of: string),
-    field("minor_units", of: int),
-  )
-  |> list
+  {
+    use country <- decode.field("country", decode.string)
+    use display_name <- decode.field("display_name", decode.string)
+    use alpha_code <- decode.field("alpha_code", decode.string)
+    use numeric_code <- decode.field("numeric_code", decode.string)
+    use minor_units <- decode.field("minor_units", decode.int)
+    decode.success(TestCurrency(
+      country:,
+      display_name:,
+      alpha_code:,
+      numeric_code:,
+      minor_units:,
+    ))
+  }
+  |> decode.list
 }
 
 pub fn iso_4217__test() {
   let assert Ok(data) = simplifile.read("test/data/currencies.json")
 
   let assert Ok(test_currencies) =
-    json.decode(from: data, using: test_currency_list_decoder())
+    json.parse(from: data, using: test_currency_list_decoder())
 
   test_currencies
   |> list.each(test_from_alpha_code)
