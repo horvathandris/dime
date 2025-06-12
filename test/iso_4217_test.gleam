@@ -17,29 +17,27 @@ type TestCurrency {
   )
 }
 
-fn test_currency_list_decoder() {
-  {
-    use country <- decode.field("country", decode.string)
-    use display_name <- decode.field("display_name", decode.string)
-    use alpha_code <- decode.field("alpha_code", decode.string)
-    use numeric_code <- decode.field("numeric_code", decode.string)
-    use minor_units <- decode.field("minor_units", decode.int)
-    decode.success(TestCurrency(
-      country:,
-      display_name:,
-      alpha_code:,
-      numeric_code:,
-      minor_units:,
-    ))
-  }
-  |> decode.list
+fn test_currency_decoder() {
+  use country <- decode.field("country", decode.string)
+  use display_name <- decode.field("display_name", decode.string)
+  use alpha_code <- decode.field("alpha_code", decode.string)
+  use numeric_code <- decode.field("numeric_code", decode.string)
+  use minor_units <- decode.field("minor_units", decode.int)
+  TestCurrency(
+    country:,
+    display_name:,
+    alpha_code:,
+    numeric_code:,
+    minor_units:,
+  )
+  |> decode.success
 }
 
 pub fn iso_4217__test() {
   let assert Ok(data) = simplifile.read("test/data/currencies.json")
 
   let assert Ok(test_currencies) =
-    json.parse(from: data, using: test_currency_list_decoder())
+    json.parse(from: data, using: decode.list(test_currency_decoder()))
 
   test_currencies
   |> list.each(test_from_alpha_code)

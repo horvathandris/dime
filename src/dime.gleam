@@ -9,8 +9,6 @@ pub const all = Currency("ALL", "008", "Albanian Lek", "L", 2)
 
 pub const amd = Currency("AMD", "051", "Armenian Dram", "֏", 2)
 
-pub const ang = Currency("ANG", "532", "Netherlands Antillean Guilder", "ƒ", 2)
-
 pub const aoa = Currency("AOA", "973", "Angolan Kwanza", "Kz", 2)
 
 pub const ars = Currency("ARS", "032", "Argentine Peso", "$", 2)
@@ -309,7 +307,11 @@ pub const wst = Currency("WST", "882", "Samoan Tālā", "T", 2)
 
 pub const xaf = Currency("XAF", "950", "Central African CFA Franc", "F.CFA", 0)
 
+pub const xad = Currency("XAD", "396", "Arab Accounting Dinar", "AAD", 2)
+
 pub const xcd = Currency("XCD", "951", "East Caribbean Dollar", "$", 2)
+
+pub const xcg = Currency("XCG", "532", "Caribbean Guilder", "Cg", 2)
 
 pub const xof = Currency("XOF", "952", "West African CFA Franc", "F.CFA", 0)
 
@@ -330,7 +332,6 @@ const all_currencies = [
   afn,
   all,
   amd,
-  ang,
   aoa,
   ars,
   aud,
@@ -477,7 +478,9 @@ const all_currencies = [
   vuv,
   wst,
   xaf,
+  xad,
   xcd,
+  xcg,
   xof,
   xpf,
   yer,
@@ -572,7 +575,6 @@ fn parse_alpha_code(
     "AFN" -> Ok(afn)
     "ALL" -> Ok(all)
     "AMD" -> Ok(amd)
-    "ANG" -> Ok(ang)
     "AOA" -> Ok(aoa)
     "ARS" -> Ok(ars)
     "AUD" -> Ok(aud)
@@ -719,7 +721,9 @@ fn parse_alpha_code(
     "VND" -> Ok(vnd)
     "WST" -> Ok(wst)
     "XAF" -> Ok(xaf)
+    "XAD" -> Ok(xad)
     "XCD" -> Ok(xcd)
+    "XCG" -> Ok(xcg)
     "XOF" -> Ok(xof)
     "XPF" -> Ok(xpf)
     "YER" -> Ok(yer)
@@ -747,7 +751,6 @@ fn parse_numeric_code(
     "971" -> Ok(afn)
     "008" -> Ok(all)
     "051" -> Ok(amd)
-    "532" -> Ok(ang)
     "973" -> Ok(aoa)
     "032" -> Ok(ars)
     "036" -> Ok(aud)
@@ -895,7 +898,9 @@ fn parse_numeric_code(
     "704" -> Ok(vnd)
     "882" -> Ok(wst)
     "950" -> Ok(xaf)
+    "396" -> Ok(xad)
     "951" -> Ok(xcd)
+    "532" -> Ok(xcg)
     "952" -> Ok(xof)
     "953" -> Ok(xpf)
     "886" -> Ok(yer)

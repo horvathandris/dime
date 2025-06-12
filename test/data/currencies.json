@@ -63,6 +63,13 @@
     "minor_units": 2
   },
   {
+    "country": "ARAB MONETARY FUND",
+    "display_name": "Arab Accounting Dinar",
+    "alpha_code": "XAD",
+    "numeric_code": "396",
+    "minor_units": 2
+  },
+  {
     "country": "ARGENTINA",
     "display_name": "Argentine Peso",
     "alpha_code": "ARS",
@@ -400,8 +407,8 @@
   },
   {
     "country": "CURAÇAO",
-    "display_name": "Netherlands Antillean Guilder",
-    "alpha_code": "ANG",
+    "display_name": "Caribbean Guilder",
+    "alpha_code": "XCG",
     "numeric_code": "532",
     "minor_units": 2
   },
@@ -1443,8 +1450,8 @@
   },
   {
     "country": "SINT MAARTEN (DUTCH PART)",
-    "display_name": "Netherlands Antillean Guilder",
-    "alpha_code": "ANG",
+    "display_name": "Caribbean Guilder",
+    "alpha_code": "XCG",
     "numeric_code": "532",
     "minor_units": 2
   },

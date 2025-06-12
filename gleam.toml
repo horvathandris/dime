@@ -10,9 +10,9 @@ gleam_stdlib = ">= 0.34.0 and < 2.0.0"
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
 simplifile = ">= 2.2.0 and < 3.0.0"
-gleam_json = ">= 2.0.0 and < 3.0.0"
+gleam_json = ">= 3.0.0 and < 4.0.0"
 cactus = ">= 1.1.0 and < 2.0.0"
-glance = ">= 1.0.0 and < 2.0.0"
+glance = ">= 5.0.0 and < 6.0.0"
 
 [javascript.deno]
 allow_read = ["gleam.toml", "src", "test", "build"]

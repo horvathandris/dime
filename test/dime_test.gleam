@@ -31,9 +31,9 @@ pub fn static_integrity_checks__test() {
 
   const_definitions
   |> list.filter_map(fn(definition) {
-    let Definition(_, Constant(name, visibility, _, expression)) = definition
+    let Definition(_, Constant(_, name, visibility, _, expression)) = definition
     case visibility, expression {
-      Public, Call(Variable("Currency"), _) -> Ok(name)
+      Public, Call(_, Variable(_, "Currency"), _) -> Ok(name)
       _, _ -> Error(Nil)
     }
   })
