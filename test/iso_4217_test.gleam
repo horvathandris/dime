@@ -4,6 +4,7 @@ import gleam/io
 import gleam/json
 import gleam/list
 import gleam/result
+import gleam/string
 import gleeunit/should
 import simplifile
 
@@ -39,11 +40,29 @@ pub fn iso_4217__test() {
   let assert Ok(test_currencies) =
     json.parse(from: data, using: decode.list(test_currency_decoder()))
 
+  // all ISO 4217 currencies are parseable
   test_currencies
   |> list.each(test_from_alpha_code)
 
   test_currencies
   |> list.each(test_from_numeric_code)
+
+  // all known currencies are in the ISO 4217 list
+  let non_iso_4217_currencies =
+    dime.known_currencies()
+    |> list.filter(fn(currency) {
+      test_currencies
+      |> list.all(fn(test_currency) {
+        test_currency.alpha_code != dime.alpha_code(currency)
+      })
+    })
+
+  assert non_iso_4217_currencies == []
+    as {
+      "The following currencies are not in the ISO 4217 list: "
+      <> list.map(non_iso_4217_currencies, dime.alpha_code)
+      |> string.join(", ")
+    }
 }
 
 fn test_from_alpha_code(test_currency: TestCurrency) {

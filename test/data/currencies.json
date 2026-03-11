@@ -246,9 +246,9 @@
   },
   {
     "country": "BULGARIA",
-    "display_name": "Bulgarian Lev",
-    "alpha_code": "BGN",
-    "numeric_code": "975",
+    "display_name": "Euro",
+    "alpha_code": "EUR",
+    "numeric_code": "978",
     "minor_units": 2
   },
   {

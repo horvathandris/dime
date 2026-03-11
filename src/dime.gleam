@@ -31,8 +31,6 @@ pub const bbd = Currency("BBD", "052", "Barbadian Dollar", "$", 2)
 
 pub const bdt = Currency("BDT", "050", "Bangladeshi Taka", "৳", 2)
 
-pub const bgn = Currency("BGN", "975", "Bulgarian Lev", "лв", 2)
-
 pub const bhd = Currency("BHD", "048", "Bahraini Dinar", ".د.ب", 3)
 
 pub const bif = Currency("BIF", "108", "Burundian Franc", "FBu", 0)
@@ -114,8 +112,6 @@ pub const gyd = Currency("GYD", "328", "Guyana Dollar", "$", 2)
 pub const hkd = Currency("HKD", "344", "Hong Kong Dollar", "$", 2)
 
 pub const hnl = Currency("HNL", "340", "Hondurasi Lempira", "L", 2)
-
-pub const hrk = Currency("HRK", "191", "Croatian Kuna", "kn", 2)
 
 pub const htg = Currency("HTG", "332", "Haitian Gourde", "G", 2)
 
@@ -340,7 +336,6 @@ const all_currencies = [
   bam,
   bbd,
   bdt,
-  bgn,
   bhd,
   bif,
   bmd,
@@ -382,7 +377,6 @@ const all_currencies = [
   gyd,
   hkd,
   hnl,
-  hrk,
   htg,
   huf,
   idr,
@@ -583,7 +577,6 @@ fn parse_alpha_code(
     "BAM" -> Ok(bam)
     "BBD" -> Ok(bbd)
     "BDT" -> Ok(bdt)
-    "BGN" -> Ok(bgn)
     "BHD" -> Ok(bhd)
     "BIF" -> Ok(bif)
     "BMD" -> Ok(bmd)
@@ -625,7 +618,6 @@ fn parse_alpha_code(
     "GYD" -> Ok(gyd)
     "HKD" -> Ok(hkd)
     "HNL" -> Ok(hnl)
-    "HRK" -> Ok(hrk)
     "HTG" -> Ok(htg)
     "HUF" -> Ok(huf)
     "IDR" -> Ok(idr)
@@ -759,7 +751,6 @@ fn parse_numeric_code(
     "977" -> Ok(bam)
     "052" -> Ok(bbd)
     "050" -> Ok(bdt)
-    "975" -> Ok(bgn)
     "048" -> Ok(bhd)
     "108" -> Ok(bif)
     "060" -> Ok(bmd)
@@ -801,7 +792,6 @@ fn parse_numeric_code(
     "328" -> Ok(gyd)
     "344" -> Ok(hkd)
     "340" -> Ok(hnl)
-    "191" -> Ok(hrk)
     "332" -> Ok(htg)
     "348" -> Ok(huf)
     "360" -> Ok(idr)
